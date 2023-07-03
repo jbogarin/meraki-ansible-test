@@ -1,0 +1,11 @@
+---
+- hosts: meraki_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get all Organizations Admins
+      cisco.meraki.organizations_admins_info:
+        meraki_api_key: "{{meraki_api_key}}"
+        organizationId: "828099381482762270"
+      register: result

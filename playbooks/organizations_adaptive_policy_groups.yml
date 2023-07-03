@@ -1,0 +1,19 @@
+---
+- hosts: meraki_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Create
+      cisco.meraki.organizations_adaptive_policy_groups:
+        meraki_api_key: "{{meraki_api_key}}"
+        state: present
+        # description: Group of XYZ Corp Employees
+        # isDefaultGroup: false
+        name: Employee Group
+        organizationId: "828099381482762270"
+        # policyObjects:
+        # - id: '2345'
+        #   name: Example Policy Object
+        # requiredIpMappings: []
+        sgt: 10005

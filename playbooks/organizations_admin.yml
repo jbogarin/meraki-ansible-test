@@ -1,0 +1,32 @@
+---
+- hosts: meraki_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Create
+      cisco.meraki.organizations_admins:
+        meraki_api_key: "{{meraki_api_key}}"
+        state: present
+        name: DevNet Admin 3455
+        email: devnetmerakiadmin23@cisco.com
+        authenticationMethod: Email
+        orgAccess: full
+        networks: []
+        tags: []
+        organizationId: "828099381482762270"
+  #       - name: Create
+  # cisco.meraki.organizations_admins:
+  #   meraki_host: "{{meraki_host}}"
+  #   state: present
+  #   authenticationMethod: Email
+  #   email: miles@meraki.com
+  #   name: Miles Meraki
+  #   networks:
+  #   - access: full
+  #     id: N_24329156
+  #   orgAccess: none
+  #   organizationId: string
+  #   tags:
+  #   - access: read-only
+  #     tag: west
