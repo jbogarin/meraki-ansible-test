@@ -1,12 +1,10 @@
 ---
 - hosts: meraki_servers
-  vars_files:
-    - credentials.yml
   gather_facts: false
   tasks:
     - name: Get all organizations _clients _search
       cisco.meraki.organizations_clients_search_info:
-        meraki_api_key: "{{meraki_api_key}}"
+        meraki_suppress_logging: true
         mac: "4c:c8:a1:01:01:c2"
         perPage: 3
         total_pages: -1

@@ -1,12 +1,10 @@
 ---
 - hosts: meraki_servers
-  vars_files:
-    - credentials.yml
   gather_facts: false
   tasks:
     - name: Create
       cisco.meraki.devices_live_tools_ping:
-        meraki_api_key: "{{meraki_api_key}}"
+        meraki_suppress_logging: true
         # meraki_base_url: "{{meraki_base_url}}"
         # meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
         # meraki_certificate_path: "{{meraki_certificate_path}}"

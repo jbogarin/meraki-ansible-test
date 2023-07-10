@@ -1,12 +1,10 @@
 ---
 - hosts: meraki_servers
-  vars_files:
-    - credentials.yml
   gather_facts: false
   tasks:
     - name: Get all organizations _devices
       cisco.meraki.organizations_devices_info:
-        meraki_api_key: "{{meraki_api_key}}"
+        meraki_suppress_logging: true
         perPage: 3
         total_pages: -1
         # startingAfter: string

@@ -1,12 +1,10 @@
 ---
 - hosts: meraki_servers
-  vars_files:
-    - credentials.yml
   gather_facts: false
   tasks:
     - name: Create
       cisco.meraki.organizations:
-        meraki_api_key: "{{meraki_api_key}}"
+        meraki_suppress_logging: true
         # meraki_username: "{{meraki_username}}"
         # meraki_password: "{{meraki_password}}"
         # meraki_verify: "{{meraki_verify}}"

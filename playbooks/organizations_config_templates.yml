@@ -1,12 +1,10 @@
 ---
 - hosts: meraki_servers
-  vars_files:
-    - credentials.yml
   gather_facts: false
   tasks:
     - name: Create
       cisco.meraki.organizations_config_templates:
-        meraki_api_key: "{{meraki_api_key}}"
+        meraki_suppress_logging: true
         state: present
         name: "My config template"
         organizationId: "828099381482762270"
@@ -14,7 +12,7 @@
 
     # - name: Update by id
     #   cisco.meraki.organizations_config_templates:
-    #     meraki_api_key: "{{meraki_api_key}}"
+    #     meraki_suppress_logging: true
     #     state: present
     #     configTemplateId: string
     #     name: My config template
@@ -23,7 +21,7 @@
 
     # - name: Delete by id
     #   cisco.meraki.organizations_config_templates:
-    #     meraki_api_key: "{{meraki_api_key}}"
+    #     meraki_suppress_logging: true
     #     meraki_caller: "{{meraki_caller}}"
     #     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     #     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
