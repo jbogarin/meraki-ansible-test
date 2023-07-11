@@ -131,7 +131,7 @@ def meraki_argument_spec():
         meraki_log_path=dict(type="str", default=""),
         meraki_log_file_prefix=dict(type="str", default="meraki_api_"),
         meraki_print_console=dict(type="bool", default=True),
-        meraki_suppress_logging=dict(type="bool", default=False),
+        meraki_suppress_logging=dict(type="bool", default=True),
         meraki_simulate=dict(type="bool", default=False),
         meraki_be_geo_id=dict(type="str", fallback=(
             env_fallback, ['BE_GEO_ID']), default=""),
