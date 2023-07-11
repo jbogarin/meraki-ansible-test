@@ -1,12 +1,10 @@
 ---
 - hosts: meraki_servers
-  vars_files:
-    - credentials.yml
   gather_facts: false
   tasks:
     - name: Create
       cisco.meraki.organizations_saml_idps:
-        meraki_api_key: "{{meraki_api_key}}"
+        meraki_suppress_logging: true
         state: present
         organizationId: "828099381482762270"
         sloLogoutUrl: https://somewhere.com

@@ -1,15 +1,14 @@
 ---
 - hosts: meraki_servers
-  vars_files:
-    - credentials.yml
   gather_facts: false
   tasks:
     - name: Create
       cisco.meraki.organizations_admins:
-        meraki_api_key: "{{meraki_api_key}}"
-        state: present
+        meraki_suppress_logging: true
+        meraki_caller: "test 123"
+        state: absent
         name: DevNet Admin 3455
-        email: devnetmerakiadmin23@cisco.com
+        email: devnetmerakiadmin23@yopmail.com
         authenticationMethod: Email
         orgAccess: full
         networks: []

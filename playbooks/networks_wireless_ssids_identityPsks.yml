@@ -1,12 +1,10 @@
 ---
 - hosts: meraki_servers
-  vars_files:
-    - credentials.yml
   gather_facts: false
   tasks:
     - name: Create
       cisco.meraki.networks_wireless_ssids_identity_psks:
-        meraki_api_key: "{{meraki_api_key}}"
+        meraki_suppress_logging: true
         state: present
         expiresAt: '2018-02-11T00:00:00.090210Z'
         groupPolicyId: '101'

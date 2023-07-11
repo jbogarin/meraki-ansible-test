@@ -1,12 +1,10 @@
 ---
 - hosts: meraki_servers
-  vars_files:
-    - credentials.yml
   gather_facts: false
   tasks:
     - name: Create
       cisco.meraki.organizations_camera_custom_analytics_artifacts:
-        meraki_api_key: "{{meraki_api_key}}"
+        meraki_suppress_logging: true
         state: present
         name: Test Ansible 2
         organizationId: "828099381482762270"

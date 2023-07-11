@@ -1,12 +1,10 @@
 ---
 - hosts: meraki_servers
-  vars_files:
-    - credentials.yml
   gather_facts: false
   tasks:
     - name: Create
       cisco.meraki.networks_appliance_vlans:
-        meraki_api_key: "{{meraki_api_key}}"
+        meraki_suppress_logging: true
         state: present
         applianceIp: 192.168.1.2
         cidr: 192.168.1.0/24

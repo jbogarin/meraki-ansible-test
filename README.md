@@ -57,7 +57,8 @@ Install the collection ([Galaxy link](https://galaxy.ansible.com/cisco/meraki))
 ansible-galaxy collection install cisco.meraki
 ```
 ## Use
-First, define a `credentials.yml` ([example](https://github.com/cisco-en-programmability/meraki-ansible/blob/main/playbooks/credentials.template)) file where you specify your Meraki credentials as Ansible variables:
+First, your Meraki API key needs to be available for the playbook to use. You can leverage environment variables `export MERAKI_DASHBOARD_API_KEY=093b24e85df15a3e66f1fc359f4c48493eaa1b73`, or create a `credentials.yml` ([example](https://github.com/cisco-en-programmability/meraki-ansible/blob/main/playbooks/credentials.template)) file.
+**Note:** storing your API key in an unencrypted text file is not recommended for security reasons.
 ```
 ---
 meraki_api_key: "ABC"
@@ -93,13 +94,11 @@ Then, create a playbook `myplaybook.yml` ([example](https://github.com/cisco-en-
 ```
 ---
 - hosts: meraki_servers
-  vars_files:
-    - credentials.yml
   gather_facts: false
   tasks:
     - name: Get all administered _identities _me
       cisco.meraki.administered_identities_me_info:
-        meraki_api_key: "{{meraki_api_key}}"
+        meraki_suppress_logging: true
       register: result
 
 ```

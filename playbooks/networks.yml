@@ -1,7 +1,5 @@
 ---
 - hosts: meraki_servers
-  vars_files:
-    - credentials.yml
   gather_facts: false
   tasks:
     # - name: Get all networks
@@ -17,7 +15,7 @@
     #   register: result
     - name: Create
       cisco.meraki.networks:
-        meraki_api_key: "{{meraki_api_key}}"
+        meraki_suppress_logging: true
         state: present
         # copyFromNetworkId: N_24329156
         name: Site 1
