@@ -135,8 +135,6 @@ def meraki_argument_spec():
         meraki_simulate=dict(type="bool", default=False),
         meraki_be_geo_id=dict(type="str", fallback=(
             env_fallback, ['BE_GEO_ID']), default=""),
-        meraki_caller=dict(type="str", fallback=(
-            env_fallback, ['MERAKI_PYTHON_SDK_CALLER']), default=""),
         meraki_use_iterator_for_get_pages=dict(type="bool", default=False),
         meraki_inherit_logging_config=dict(type="bool", default=False),
     )
@@ -171,7 +169,7 @@ class MERAKI(object):
                 suppress_logging=params.get("meraki_suppress_logging"),
                 simulate=params.get("meraki_simulate"),
                 be_geo_id=params.get("meraki_be_geo_id"),
-                caller=params.get("meraki_caller"),
+                caller="AnsibleCollection/1.0.0 RedHat",
                 use_iterator_for_get_pages=params.get(
                     "meraki_use_iterator_for_get_pages"),
                 inherit_logging_config=params.get(
