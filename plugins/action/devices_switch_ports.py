@@ -205,15 +205,17 @@ class DevicesSwitchPorts(object):
         result = None
         try:
             items = self.meraki.exec_meraki(
-                family="devices",
+                family="switch",
                 function="getDeviceSwitchPort",
                 params=self.get_params_by_id()
             )
             if isinstance(items, dict):
                 if 'response' in items:
                     items = items.get('response')
+            print(items)
             result = get_dict_result(items, 'portid', id)
-        except Exception:
+        except Exception as e:
+            print(e)
             result = None
         return result
 
@@ -297,7 +299,7 @@ class DevicesSwitchPorts(object):
             if id_:
                 self.new_object.update(dict(portid=id_))
         result = self.meraki.exec_meraki(
-            family="devices",
+            family="switch",
             function="updateDeviceSwitchPort",
             params=self.update_by_id_params(),
             op_modifies=True,
