@@ -91,7 +91,7 @@ argument_spec.update(dict(
     dnsRewrite=dict(type="dict"),
     speedBurst=dict(type="dict"),
     networkId=dict(type="str"),
-    number=dict(type="str"),
+    number=dict(type="int"),
 ))
 
 required_if = [
@@ -380,7 +380,7 @@ class NetworksWirelessSsids(object):
             if isinstance(items, dict):
                 if 'response' in items:
                     items = items.get('response')
-            result = get_dict_result(items, 'name', name)
+            result = get_dict_result(items, 'number', name)
         except Exception:
             result = None
         return result
@@ -396,7 +396,7 @@ class NetworksWirelessSsids(object):
             if isinstance(items, dict):
                 if 'response' in items:
                     items = items.get('response')
-            result = get_dict_result(items, 'number', id)
+            result = items
         except Exception:
             result = None
         return result
@@ -408,7 +408,7 @@ class NetworksWirelessSsids(object):
         o_id = self.new_object.get("id")
         o_id = o_id or self.new_object.get(
             "number") or self.new_object.get("number")
-        name = self.new_object.get("name")
+        name = o_id or self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
