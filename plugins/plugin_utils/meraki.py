@@ -40,6 +40,29 @@ def has_diff_elem(ls1, ls2):
     return any((elem not in ls1 for elem in ls2))
 
 
+def has_diff_elem2(ls1, ls2):
+    for elem in ls2:
+        if type(elem) is dict:
+            find = False
+            keys1 = elem.keys()
+            for elem2 in ls1:
+                keys2 = elem2.keys()
+                common_keys = []
+                for key in keys1:
+                    if key in keys2:
+                        common_keys.append(key)
+                has_diff = False
+                for k in common_keys:
+                    if elem2[k] != elem[k]:
+                        has_diff = True
+                if not has_diff:
+                    find = True
+                    break
+            if not find:
+                return True
+    return False
+
+
 def compare_list(list1, list2):
     len_list1 = len(list1)
     len_list2 = len(list2)
@@ -63,7 +86,10 @@ def compare_list(list1, list2):
         return attempt_std_cmp
     else:
         # not changes 'has diff elem' to list1 != list2 ':lists are not equal'
-        return not (has_diff_elem(list1, list2)) or not (has_diff_elem(list2, list1))
+        if type(list1[0]) is dict:
+            return not (has_diff_elem2(list1, list2)) or not (has_diff_elem2(list2, list1))
+        else:
+            return not (has_diff_elem(list1, list2)) or not (has_diff_elem(list2, list1))
 
 
 def fn_comp_key(k, dict1, dict2):
