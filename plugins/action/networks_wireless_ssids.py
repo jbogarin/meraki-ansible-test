@@ -91,7 +91,7 @@ argument_spec.update(dict(
     dnsRewrite=dict(type="dict"),
     speedBurst=dict(type="dict"),
     networkId=dict(type="str"),
-    number=dict(type="int"),
+    number=dict(type="str"),
 ))
 
 required_if = [
@@ -496,6 +496,7 @@ class NetworksWirelessSsids(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
+        current_obj["number"] = str(current_obj.get("number"))
         return any(not meraki_compare_equality(current_obj.get(meraki_param),
                                                requested_obj.get(ansible_param))
                    for (meraki_param, ansible_param) in obj_params)
