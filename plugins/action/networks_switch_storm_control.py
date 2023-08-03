@@ -92,7 +92,10 @@ class NetworksSwitchStormControl(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-        except Exception:
+            if result == None:
+                result = items
+        except Exception as e:
+            print("Error: ", e)
             result = None
         return result
 
@@ -105,10 +108,10 @@ class NetworksSwitchStormControl(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("id")
+        o_id = self.new_object.get("networkId") or self.new_object.get("network_id")
         name = self.new_object.get("name")
         if o_id:
-            prev_obj = self.get_object_by_id(o_id)
+            prev_obj = self.get_object_by_name(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if not id_exists and name:
             prev_obj = self.get_object_by_name(name)
