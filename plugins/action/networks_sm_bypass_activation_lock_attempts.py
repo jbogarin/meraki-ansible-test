@@ -90,8 +90,9 @@ class NetworksSmBypassActivationLockAttempts(object):
             if isinstance(items, dict):
                 if 'response' in items:
                     items = items.get('response')
-            result = get_dict_result(items, 'attemptid', id)
-        except Exception:
+            result = items
+        except Exception as e:
+            print("Error: ", e)
             result = None
         return result
 
@@ -99,7 +100,7 @@ class NetworksSmBypassActivationLockAttempts(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("id")
+        o_id = self.new_object.get("networkId") or self.new_object.get("network_id")
         o_id = o_id or self.new_object.get(
             "attempt_id") or self.new_object.get("attemptId")
         name = self.new_object.get("name")
