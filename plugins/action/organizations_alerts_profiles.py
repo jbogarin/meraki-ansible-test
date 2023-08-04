@@ -144,7 +144,7 @@ class OrganizationsAlertsProfiles(object):
             "alert_config_id") or self.new_object.get("alertConfigId")
         name = self.new_object.get("name")
         if o_id:
-            prev_obj = self.get_object_by_id(o_id)
+            prev_obj = self.get_object_by_name(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if not id_exists and name:
             prev_obj = self.get_object_by_name(name)

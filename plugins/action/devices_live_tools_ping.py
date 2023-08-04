@@ -93,8 +93,9 @@ class DevicesLiveToolsPing(object):
             if isinstance(items, dict):
                 if 'response' in items:
                     items = items.get('response')
-            result = get_dict_result(items, 'id', id)
-        except Exception:
+            result = items
+        except Exception as e:
+            print("Error: ", e)
             result = None
         return result
 
@@ -102,7 +103,7 @@ class DevicesLiveToolsPing(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("id")
+        o_id = self.new_object.get("id") #review it
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_id(o_id)

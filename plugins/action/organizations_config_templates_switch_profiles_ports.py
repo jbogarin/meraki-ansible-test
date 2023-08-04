@@ -229,7 +229,10 @@ class OrganizationsConfigTemplatesSwitchProfilesPorts(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-        except Exception:
+            if result == None:
+                result = items
+        except Exception as e:
+            print("Error: ", e)
             result = None
         return result
 
@@ -244,8 +247,9 @@ class OrganizationsConfigTemplatesSwitchProfilesPorts(object):
             if isinstance(items, dict):
                 if 'response' in items:
                     items = items.get('response')
-            result = get_dict_result(items, 'portid', id)
-        except Exception:
+            result = items
+        except Exception as e:
+            print("Error: ", e)
             result = None
         return result
 

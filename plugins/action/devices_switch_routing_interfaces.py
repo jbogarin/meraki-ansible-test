@@ -172,7 +172,7 @@ class DevicesSwitchRoutingInterfaces(object):
         # NOTE: Does not have a get by name method or it is in another action
         try:
             items = self.meraki.exec_meraki(
-                family="devices",
+                family="switch",
                 function="getDeviceSwitchRoutingInterfaces",
                 params=self.get_all_params(name=name),
             )
@@ -180,7 +180,10 @@ class DevicesSwitchRoutingInterfaces(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-        except Exception:
+            if result == None:
+                result = items
+        except Exception as e:
+            print("Error: ", e)
             result = None
         return result
 
@@ -188,7 +191,7 @@ class DevicesSwitchRoutingInterfaces(object):
         result = None
         try:
             items = self.meraki.exec_meraki(
-                family="devices",
+                family="switch",
                 function="getDeviceSwitchRoutingInterface",
                 params=self.get_params_by_id()
             )
@@ -196,7 +199,8 @@ class DevicesSwitchRoutingInterfaces(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'interfaceId', id)
-        except Exception:
+        except Exception as e:
+            print("Error: ", e)
             result = None
         return result
 
@@ -273,7 +277,7 @@ class DevicesSwitchRoutingInterfaces(object):
             if id_:
                 self.new_object.update(dict(interfaceId=id_))
         result = self.meraki.exec_meraki(
-            family="devices",
+            family="switch",
             function="updateDeviceSwitchRoutingInterface",
             params=self.update_by_id_params(),
             op_modifies=True,
@@ -294,7 +298,7 @@ class DevicesSwitchRoutingInterfaces(object):
             if id_:
                 self.new_object.update(dict(interfaceId=id_))
         result = self.meraki.exec_meraki(
-            family="devices",
+            family="switch",
             function="deleteDeviceSwitchRoutingInterface",
             params=self.delete_by_id_params(),
         )

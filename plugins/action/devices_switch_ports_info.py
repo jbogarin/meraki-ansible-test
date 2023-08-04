@@ -73,6 +73,14 @@ class ActionModule(ActionBase):
                 "portId")
         return new_object
 
+    def get_all(self, params):
+        new_object = {}
+        if params.get("serial") is not None:
+            new_object["serial"] = params.get(
+                "serial")
+
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -86,7 +94,7 @@ class ActionModule(ActionBase):
         id = self._task.args.get("portId")
         if id:
             response = meraki.exec_meraki(
-                family="devices",
+                family="switch",
                 function='getDeviceSwitchPort',
                 params=self.get_object(self._task.args),
             )
@@ -94,9 +102,11 @@ class ActionModule(ActionBase):
             self._result.update(meraki.exit_json())
             return self._result
         if not id:
-            # NOTE: Does not have a get all method or it is in another action
-            response = None
-            meraki.object_modify_result(changed=False, result="Module does not have get all, check arguments of module")
+            response = meraki.exec_meraki(
+                family="switch",
+                function='getDeviceSwitchPorts',
+                params=self.get_all(self._task.args),
+            )
             self._result.update(dict(meraki_response=response))
             self._result.update(meraki.exit_json())
             return self._result
