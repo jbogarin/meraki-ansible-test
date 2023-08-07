@@ -1,8 +1,8 @@
 ---
 # This playbook will create 3 WiFi networks across all networks in a given Meraki organization:
-# 1. Corporate (802.1x) on vlan X
-# 2. Mobile (WPA-PSK) on vlan Y
-# 3. Guests (Portal) on vlan Z
+# 1. Corporate (802.1x) on vlan 100
+# 2. Mobile (WPA-PSK) on vlan 200
+# 3. Guests (Portal) on vlan 300
 
 - hosts: meraki_servers
   vars_files:
