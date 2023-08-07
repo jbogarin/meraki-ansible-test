@@ -140,7 +140,7 @@ class DevicesSwitchRoutingStaticRoutes(object):
         # NOTE: Does not have a get by name method or it is in another action
         try:
             items = self.meraki.exec_meraki(
-                family="devices",
+                family="switch",
                 function="getDeviceSwitchRoutingStaticRoutes",
                 params=self.get_all_params(name=name),
             )
@@ -148,7 +148,10 @@ class DevicesSwitchRoutingStaticRoutes(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-        except Exception:
+            if result == None:
+                result = items
+        except Exception as e:
+            print("Error: ", e)
             result = None
         return result
 
@@ -156,7 +159,7 @@ class DevicesSwitchRoutingStaticRoutes(object):
         result = None
         try:
             items = self.meraki.exec_meraki(
-                family="devices",
+                family="switch",
                 function="getDeviceSwitchRoutingStaticRoute",
                 params=self.get_params_by_id()
             )
@@ -164,7 +167,8 @@ class DevicesSwitchRoutingStaticRoutes(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'staticRouteId', id)
-        except Exception:
+        except Exception as e:
+            print("Error: ", e)
             result = None
         return result
 
@@ -216,7 +220,7 @@ class DevicesSwitchRoutingStaticRoutes(object):
 
     def create(self):
         result = self.meraki.exec_meraki(
-            family="devices",
+            family="switch",
             function="createDeviceSwitchRoutingStaticRoute",
             params=self.create_params(),
             op_modifies=True,
@@ -237,7 +241,7 @@ class DevicesSwitchRoutingStaticRoutes(object):
             if id_:
                 self.new_object.update(dict(staticRouteId=id_))
         result = self.meraki.exec_meraki(
-            family="devices",
+            family="switch",
             function="updateDeviceSwitchRoutingStaticRoute",
             params=self.update_by_id_params(),
             op_modifies=True,
@@ -258,7 +262,7 @@ class DevicesSwitchRoutingStaticRoutes(object):
             if id_:
                 self.new_object.update(dict(staticRouteId=id_))
         result = self.meraki.exec_meraki(
-            family="devices",
+            family="switch",
             function="deleteDeviceSwitchRoutingStaticRoute",
             params=self.delete_by_id_params(),
         )

@@ -123,7 +123,10 @@ class OrganizationsEarlyAccessFeaturesOptIns(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-        except Exception:
+            if result == None:
+                result = items
+        except Exception as e:
+            print("Error: ", e)
             result = None
         return result
 
@@ -139,7 +142,8 @@ class OrganizationsEarlyAccessFeaturesOptIns(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'optInId', id)
-        except Exception:
+        except Exception as e:
+            print("Error: ", e)
             result = None
         return result
 

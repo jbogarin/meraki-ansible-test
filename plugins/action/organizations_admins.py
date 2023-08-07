@@ -142,7 +142,8 @@ class OrganizationsAdmins(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'email', name)
-        except Exception:
+        except Exception as e:
+            print("Error: ", e)
             result = None
         return result
 
@@ -159,7 +160,8 @@ class OrganizationsAdmins(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'id', id)
-        except Exception:
+        except Exception as e:
+            print("Error: ", e)
             result = None
         return result
 

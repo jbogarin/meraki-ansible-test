@@ -94,7 +94,7 @@ class ActionModule(ActionBase):
         id = self._task.args.get("interfaceId")
         if id:
             response = meraki.exec_meraki(
-                family="devices",
+                family="switch",
                 function='getDeviceSwitchRoutingInterface',
                 params=self.get_object(self._task.args),
             )
@@ -103,7 +103,7 @@ class ActionModule(ActionBase):
             return self._result
         if not id:
             response = meraki.exec_meraki(
-                family="devices",
+                family="switch",
                 function='getDeviceSwitchRoutingInterfaces',
                 params=self.get_all(self._task.args),
             )

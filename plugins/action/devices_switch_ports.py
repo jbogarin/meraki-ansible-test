@@ -102,6 +102,12 @@ class DevicesSwitchPorts(object):
             port_id=params.get("portId"),
         )
 
+    def get_all_params(self, name=None, id=None):
+        new_object_params = {}
+        if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
+            new_object_params['serial'] = self.new_object.get('serial')
+        return new_object_params
+
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
         if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
@@ -198,7 +204,19 @@ class DevicesSwitchPorts(object):
 
     def get_object_by_name(self, name):
         result = None
-        # NOTE: Does not have a get by name and get all
+        # NOTE: Does not have a get by name method, using get all
+        try:
+            items = self.meraki.exec_meraki(
+                family="switch",
+                function="getDeviceSwitchPorts",
+                params=self.get_all_params(name=name),
+            )
+            if isinstance(items, dict):
+                if 'response' in items:
+                    items = items.get('response')
+            result = get_dict_result(items, 'name', name)
+        except Exception:
+            result = None
         return result
 
     def get_object_by_id(self, id):
@@ -212,10 +230,9 @@ class DevicesSwitchPorts(object):
             if isinstance(items, dict):
                 if 'response' in items:
                     items = items.get('response')
-            print(items)
-            result = get_dict_result(items, 'portid', id)
+            result = items
         except Exception as e:
-            print(e)
+            print("Error: ", e)
             result = None
         return result
 
@@ -223,7 +240,7 @@ class DevicesSwitchPorts(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("id")
+        o_id = self.new_object.get("serial")
         o_id = o_id or self.new_object.get(
             "port_id") or self.new_object.get("portId")
         name = self.new_object.get("name")

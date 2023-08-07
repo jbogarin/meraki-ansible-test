@@ -81,7 +81,10 @@ class DevicesApplianceUplinksSettings(object):
                 if 'interfaces' in items:
                     items = items.get('interfaces')
             result = get_dict_result(items, 'name', name)
-        except Exception:
+            if result == None:
+                result = items
+        except Exception as e:
+            print("Error: ", e)
             result = None
         return result
 
@@ -94,10 +97,10 @@ class DevicesApplianceUplinksSettings(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("id")
+        o_id = self.new_object.get("serial")
         name = self.new_object.get("name")
         if o_id:
-            prev_obj = self.get_object_by_id(o_id)
+            prev_obj = self.get_object_by_name(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if not id_exists and name:
             prev_obj = self.get_object_by_name(name)
