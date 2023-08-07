@@ -3,16 +3,21 @@
 - hosts: meraki_servers
   vars:
     org_id: "828099381482762270"
-    corp_name: "ACME"
+    corp_name: "TEST"
     network_id: "L_828099381482770865"
   gather_facts: false
   tasks:
 
-    - name: Create corporate SSID
+    - name: Create WPA-PSK SSID
       cisco.meraki.networks_wireless_ssids:
-        meraki_suppress_logging: true
         state: present
         enabled: true
-        name: "{{corp_name}}"
+        name: "{{corp_name}}1"
         networkId: "{{ network_id }}"
-        number: "1"
+        number: "0"
+        ipAssignmentMode: Bridge mode
+        defaultVlanId: 100
+        useVlanTagging: true
+        authMode: psk
+        encryptionMode: wpa
+        psk: SuperSecretPreSharedKey
