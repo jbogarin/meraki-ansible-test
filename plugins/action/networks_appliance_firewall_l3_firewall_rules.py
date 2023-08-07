@@ -22,6 +22,7 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     meraki_argument_spec,
     meraki_compare_equality,
     get_dict_result,
+    delete_default_rule,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
     InconsistentParameters,
@@ -123,7 +124,7 @@ class NetworksApplianceFirewallL3FirewallRules(object):
 
     def requires_update(self, current_obj):
         requested_obj = self.new_object
-
+        current_obj["rules"] = delete_default_rule(current_obj["rules"])
         obj_params = [
             ("rules", "rules"),
             ("syslogDefaultRule", "syslogDefaultRule"),
