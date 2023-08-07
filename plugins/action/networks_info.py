@@ -125,7 +125,7 @@ class ActionModule(ActionBase):
         id = self._task.args.get("networkId")
         if id:
             response = meraki.exec_meraki(
-                family="organizationsnetworks",
+                family="networks",
                 function='getNetwork',
                 params=self.get_object(self._task.args),
             )
@@ -134,7 +134,7 @@ class ActionModule(ActionBase):
             return self._result
         if not id:
             response = meraki.exec_meraki(
-                family="organizationsnetworks",
+                family="organizations",
                 function='getOrganizationNetworks',
                 params=self.get_all(self._task.args),
             )
