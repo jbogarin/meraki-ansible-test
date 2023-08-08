@@ -1,0 +1,40 @@
+---
+
+- hosts: meraki_servers
+  vars:
+    serial_number: QBSD-WABS-BH7V
+  gather_facts: false
+  tasks:
+
+  - name: Update Camera name
+    cisco.meraki.devices:
+      serial: "{{ serial_number }}"
+      name: My Camera
+
+  - name: Update Camera video settings
+    cisco.meraki.devices_camera_video_settings:
+      serial: "{{ serial_number }}"
+      externalRtspEnabled: true
+
+  # - name: Create a wireless profile
+  #   cisco.meraki.devices_camera_generate_snapshot:
+  #     serial: "{{ serial_number }}"
+  #     fullframe: false
+  #     timestamp: '2023-08-08T15:18:08Z'
+  
+  - name: Update quality and retention settings
+    cisco.meraki.devices_camera_quality_and_retention:
+      serial: "{{ serial_number }}"
+      #audioRecordingEnabled: true
+      motionBasedRetentionEnabled: true
+      motionDetectorVersion: 2
+      quality: High
+      resolution: 1920x1080
+      #restrictedBandwidthModeEnabled: false
+
+  - name: Generate a snapshop
+    cisco.meraki.devices_camera_generate_snapshot:
+      serial: "{{ serial_number }}"
+      fullframe: false
+      timestamp: '2023-08-08T15:18:08Z'
+
