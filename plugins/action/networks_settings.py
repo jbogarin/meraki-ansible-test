@@ -68,11 +68,9 @@ class NetworksSettings(object):
     def update_all_params(self):
         new_object_params = {}
         if self.new_object.get('localStatusPageEnabled') is not None or self.new_object.get('local_status_page_enabled') is not None:
-            new_object_params['localStatusPageEnabled'] = self.new_object.get('localStatusPageEnabled') or \
-                self.new_object.get('local_status_page_enabled')
+            new_object_params['localStatusPageEnabled'] = self.new_object.get('localStatusPageEnabled')
         if self.new_object.get('remoteStatusPageEnabled') is not None or self.new_object.get('remote_status_page_enabled') is not None:
-            new_object_params['remoteStatusPageEnabled'] = self.new_object.get('remoteStatusPageEnabled') or \
-                self.new_object.get('remote_status_page_enabled')
+            new_object_params['remoteStatusPageEnabled'] = self.new_object.get('remoteStatusPageEnabled')
         if self.new_object.get('localStatusPage') is not None or self.new_object.get('local_status_page') is not None:
             new_object_params['localStatusPage'] = self.new_object.get('localStatusPage') or \
                 self.new_object.get('local_status_page')

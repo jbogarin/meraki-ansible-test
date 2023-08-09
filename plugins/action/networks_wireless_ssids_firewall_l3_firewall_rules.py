@@ -71,8 +71,7 @@ class NetworksWirelessSsidsFirewallL3FirewallRules(object):
             new_object_params['rules'] = self.new_object.get('rules') or \
                 self.new_object.get('rules')
         if self.new_object.get('allowLanAccess') is not None or self.new_object.get('allow_lan_access') is not None:
-            new_object_params['allowLanAccess'] = self.new_object.get('allowLanAccess') or \
-                self.new_object.get('allow_lan_access')
+            new_object_params['allowLanAccess'] = self.new_object.get('allowLanAccess')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')

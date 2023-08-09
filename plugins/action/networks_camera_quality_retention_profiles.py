@@ -94,17 +94,13 @@ class NetworksCameraQualityRetentionProfiles(object):
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
         if self.new_object.get('motionBasedRetentionEnabled') is not None or self.new_object.get('motion_based_retention_enabled') is not None:
-            new_object_params['motionBasedRetentionEnabled'] = self.new_object.get('motionBasedRetentionEnabled') or \
-                self.new_object.get('motion_based_retention_enabled')
+            new_object_params['motionBasedRetentionEnabled'] = self.new_object.get('motionBasedRetentionEnabled')
         if self.new_object.get('restrictedBandwidthModeEnabled') is not None or self.new_object.get('restricted_bandwidth_mode_enabled') is not None:
-            new_object_params['restrictedBandwidthModeEnabled'] = self.new_object.get('restrictedBandwidthModeEnabled') or \
-                self.new_object.get('restricted_bandwidth_mode_enabled')
+            new_object_params['restrictedBandwidthModeEnabled'] = self.new_object.get('restrictedBandwidthModeEnabled')
         if self.new_object.get('audioRecordingEnabled') is not None or self.new_object.get('audio_recording_enabled') is not None:
-            new_object_params['audioRecordingEnabled'] = self.new_object.get('audioRecordingEnabled') or \
-                self.new_object.get('audio_recording_enabled')
+            new_object_params['audioRecordingEnabled'] = self.new_object.get('audioRecordingEnabled')
         if self.new_object.get('cloudArchiveEnabled') is not None or self.new_object.get('cloud_archive_enabled') is not None:
-            new_object_params['cloudArchiveEnabled'] = self.new_object.get('cloudArchiveEnabled') or \
-                self.new_object.get('cloud_archive_enabled')
+            new_object_params['cloudArchiveEnabled'] = self.new_object.get('cloudArchiveEnabled')
         if self.new_object.get('motionDetectorVersion') is not None or self.new_object.get('motion_detector_version') is not None:
             new_object_params['motionDetectorVersion'] = self.new_object.get('motionDetectorVersion') or \
                 self.new_object.get('motion_detector_version')
@@ -138,17 +134,13 @@ class NetworksCameraQualityRetentionProfiles(object):
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
         if self.new_object.get('motionBasedRetentionEnabled') is not None or self.new_object.get('motion_based_retention_enabled') is not None:
-            new_object_params['motionBasedRetentionEnabled'] = self.new_object.get('motionBasedRetentionEnabled') or \
-                self.new_object.get('motion_based_retention_enabled')
+            new_object_params['motionBasedRetentionEnabled'] = self.new_object.get('motionBasedRetentionEnabled')
         if self.new_object.get('restrictedBandwidthModeEnabled') is not None or self.new_object.get('restricted_bandwidth_mode_enabled') is not None:
-            new_object_params['restrictedBandwidthModeEnabled'] = self.new_object.get('restrictedBandwidthModeEnabled') or \
-                self.new_object.get('restricted_bandwidth_mode_enabled')
+            new_object_params['restrictedBandwidthModeEnabled'] = self.new_object.get('restrictedBandwidthModeEnabled')
         if self.new_object.get('audioRecordingEnabled') is not None or self.new_object.get('audio_recording_enabled') is not None:
-            new_object_params['audioRecordingEnabled'] = self.new_object.get('audioRecordingEnabled') or \
-                self.new_object.get('audio_recording_enabled')
+            new_object_params['audioRecordingEnabled'] = self.new_object.get('audioRecordingEnabled')
         if self.new_object.get('cloudArchiveEnabled') is not None or self.new_object.get('cloud_archive_enabled') is not None:
-            new_object_params['cloudArchiveEnabled'] = self.new_object.get('cloudArchiveEnabled') or \
-                self.new_object.get('cloud_archive_enabled')
+            new_object_params['cloudArchiveEnabled'] = self.new_object.get('cloudArchiveEnabled')
         if self.new_object.get('motionDetectorVersion') is not None or self.new_object.get('motion_detector_version') is not None:
             new_object_params['motionDetectorVersion'] = self.new_object.get('motionDetectorVersion') or \
                 self.new_object.get('motion_detector_version')

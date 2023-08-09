@@ -64,8 +64,7 @@ class NetworksSwitchStp(object):
     def update_all_params(self):
         new_object_params = {}
         if self.new_object.get('rstpEnabled') is not None or self.new_object.get('rstp_enabled') is not None:
-            new_object_params['rstpEnabled'] = self.new_object.get('rstpEnabled') or \
-                self.new_object.get('rstp_enabled')
+            new_object_params['rstpEnabled'] = self.new_object.get('rstpEnabled')
         if self.new_object.get('stpBridgePriority') is not None or self.new_object.get('stp_bridge_priority') is not None:
             new_object_params['stpBridgePriority'] = self.new_object.get('stpBridgePriority') or \
                 self.new_object.get('stp_bridge_priority')

@@ -67,8 +67,7 @@ class OrganizationsApplianceVpnVpnFirewallRules(object):
             new_object_params['rules'] = self.new_object.get('rules') or \
                 self.new_object.get('rules')
         if self.new_object.get('syslogDefaultRule') is not None or self.new_object.get('syslog_default_rule') is not None:
-            new_object_params['syslogDefaultRule'] = self.new_object.get('syslogDefaultRule') or \
-                self.new_object.get('syslog_default_rule')
+            new_object_params['syslogDefaultRule'] = self.new_object.get('syslogDefaultRule')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')

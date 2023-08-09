@@ -84,11 +84,9 @@ class NetworksAppliancePorts(object):
     def update_by_id_params(self):
         new_object_params = {}
         if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
-            new_object_params['enabled'] = self.new_object.get('enabled') or \
-                self.new_object.get('enabled')
+            new_object_params['enabled'] = self.new_object.get('enabled')
         if self.new_object.get('dropUntaggedTraffic') is not None or self.new_object.get('drop_untagged_traffic') is not None:
-            new_object_params['dropUntaggedTraffic'] = self.new_object.get('dropUntaggedTraffic') or \
-                self.new_object.get('drop_untagged_traffic')
+            new_object_params['dropUntaggedTraffic'] = self.new_object.get('dropUntaggedTraffic')
         if self.new_object.get('type') is not None or self.new_object.get('type') is not None:
             new_object_params['type'] = self.new_object.get('type') or \
                 self.new_object.get('type')

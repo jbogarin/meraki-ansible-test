@@ -99,8 +99,7 @@ class NetworksWirelessRfProfiles(object):
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
         if self.new_object.get('clientBalancingEnabled') is not None or self.new_object.get('client_balancing_enabled') is not None:
-            new_object_params['clientBalancingEnabled'] = self.new_object.get('clientBalancingEnabled') or \
-                self.new_object.get('client_balancing_enabled')
+            new_object_params['clientBalancingEnabled'] = self.new_object.get('clientBalancingEnabled')
         if self.new_object.get('minBitrateType') is not None or self.new_object.get('min_bitrate_type') is not None:
             new_object_params['minBitrateType'] = self.new_object.get('minBitrateType') or \
                 self.new_object.get('min_bitrate_type')
@@ -146,8 +145,7 @@ class NetworksWirelessRfProfiles(object):
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
         if self.new_object.get('clientBalancingEnabled') is not None or self.new_object.get('client_balancing_enabled') is not None:
-            new_object_params['clientBalancingEnabled'] = self.new_object.get('clientBalancingEnabled') or \
-                self.new_object.get('client_balancing_enabled')
+            new_object_params['clientBalancingEnabled'] = self.new_object.get('clientBalancingEnabled')
         if self.new_object.get('minBitrateType') is not None or self.new_object.get('min_bitrate_type') is not None:
             new_object_params['minBitrateType'] = self.new_object.get('minBitrateType') or \
                 self.new_object.get('min_bitrate_type')

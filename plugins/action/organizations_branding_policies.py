@@ -86,8 +86,7 @@ class OrganizationsBrandingPolicies(object):
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
         if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
-            new_object_params['enabled'] = self.new_object.get('enabled') or \
-                self.new_object.get('enabled')
+            new_object_params['enabled'] = self.new_object.get('enabled')
         if self.new_object.get('adminSettings') is not None or self.new_object.get('admin_settings') is not None:
             new_object_params['adminSettings'] = self.new_object.get('adminSettings') or \
                 self.new_object.get('admin_settings')
@@ -118,8 +117,7 @@ class OrganizationsBrandingPolicies(object):
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
         if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
-            new_object_params['enabled'] = self.new_object.get('enabled') or \
-                self.new_object.get('enabled')
+            new_object_params['enabled'] = self.new_object.get('enabled')
         if self.new_object.get('adminSettings') is not None or self.new_object.get('admin_settings') is not None:
             new_object_params['adminSettings'] = self.new_object.get('adminSettings') or \
                 self.new_object.get('admin_settings')

@@ -70,8 +70,7 @@ class NetworksNetflow(object):
     def update_all_params(self):
         new_object_params = {}
         if self.new_object.get('reportingEnabled') is not None or self.new_object.get('reporting_enabled') is not None:
-            new_object_params['reportingEnabled'] = self.new_object.get('reportingEnabled') or \
-                self.new_object.get('reporting_enabled')
+            new_object_params['reportingEnabled'] = self.new_object.get('reportingEnabled')
         if self.new_object.get('collectorIp') is not None or self.new_object.get('collector_ip') is not None:
             new_object_params['collectorIp'] = self.new_object.get('collectorIp') or \
                 self.new_object.get('collector_ip')
@@ -79,8 +78,7 @@ class NetworksNetflow(object):
             new_object_params['collectorPort'] = self.new_object.get('collectorPort') or \
                 self.new_object.get('collector_port')
         if self.new_object.get('etaEnabled') is not None or self.new_object.get('eta_enabled') is not None:
-            new_object_params['etaEnabled'] = self.new_object.get('etaEnabled') or \
-                self.new_object.get('eta_enabled')
+            new_object_params['etaEnabled'] = self.new_object.get('etaEnabled')
         if self.new_object.get('etaDstPort') is not None or self.new_object.get('eta_dst_port') is not None:
             new_object_params['etaDstPort'] = self.new_object.get('etaDstPort') or \
                 self.new_object.get('eta_dst_port')

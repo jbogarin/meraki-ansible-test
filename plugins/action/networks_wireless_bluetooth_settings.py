@@ -72,11 +72,9 @@ class NetworksWirelessBluetoothSettings(object):
     def update_all_params(self):
         new_object_params = {}
         if self.new_object.get('scanningEnabled') is not None or self.new_object.get('scanning_enabled') is not None:
-            new_object_params['scanningEnabled'] = self.new_object.get('scanningEnabled') or \
-                self.new_object.get('scanning_enabled')
+            new_object_params['scanningEnabled'] = self.new_object.get('scanningEnabled')
         if self.new_object.get('advertisingEnabled') is not None or self.new_object.get('advertising_enabled') is not None:
-            new_object_params['advertisingEnabled'] = self.new_object.get('advertisingEnabled') or \
-                self.new_object.get('advertising_enabled')
+            new_object_params['advertisingEnabled'] = self.new_object.get('advertisingEnabled')
         if self.new_object.get('uuid') is not None or self.new_object.get('uuid') is not None:
             new_object_params['uuid'] = self.new_object.get('uuid') or \
                 self.new_object.get('uuid')

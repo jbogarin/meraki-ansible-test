@@ -81,11 +81,9 @@ class OrganizationsActionBatches(object):
     def create_params(self):
         new_object_params = {}
         if self.new_object.get('confirmed') is not None or self.new_object.get('confirmed') is not None:
-            new_object_params['confirmed'] = self.new_object.get('confirmed') or \
-                self.new_object.get('confirmed')
+            new_object_params['confirmed'] = self.new_object.get('confirmed')
         if self.new_object.get('synchronous') is not None or self.new_object.get('synchronous') is not None:
-            new_object_params['synchronous'] = self.new_object.get('synchronous') or \
-                self.new_object.get('synchronous')
+            new_object_params['synchronous'] = self.new_object.get('synchronous')
         if self.new_object.get('actions') is not None or self.new_object.get('actions') is not None:
             new_object_params['actions'] = self.new_object.get('actions') or \
                 self.new_object.get('actions')
@@ -107,11 +105,9 @@ class OrganizationsActionBatches(object):
     def update_by_id_params(self):
         new_object_params = {}
         if self.new_object.get('confirmed') is not None or self.new_object.get('confirmed') is not None:
-            new_object_params['confirmed'] = self.new_object.get('confirmed') or \
-                self.new_object.get('confirmed')
+            new_object_params['confirmed'] = self.new_object.get('confirmed')
         if self.new_object.get('synchronous') is not None or self.new_object.get('synchronous') is not None:
-            new_object_params['synchronous'] = self.new_object.get('synchronous') or \
-                self.new_object.get('synchronous')
+            new_object_params['synchronous'] = self.new_object.get('synchronous')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')

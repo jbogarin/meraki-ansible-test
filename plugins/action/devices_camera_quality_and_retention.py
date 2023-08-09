@@ -76,14 +76,11 @@ class DevicesCameraQualityAndRetention(object):
             new_object_params['profileId'] = self.new_object.get('profileId') or \
                 self.new_object.get('profile_id')
         if self.new_object.get('motionBasedRetentionEnabled') is not None or self.new_object.get('motion_based_retention_enabled') is not None:
-            new_object_params['motionBasedRetentionEnabled'] = self.new_object.get('motionBasedRetentionEnabled') or \
-                self.new_object.get('motion_based_retention_enabled')
+            new_object_params['motionBasedRetentionEnabled'] = self.new_object.get('motionBasedRetentionEnabled')
         if self.new_object.get('audioRecordingEnabled') is not None or self.new_object.get('audio_recording_enabled') is not None:
-            new_object_params['audioRecordingEnabled'] = self.new_object.get('audioRecordingEnabled') or \
-                self.new_object.get('audio_recording_enabled')
+            new_object_params['audioRecordingEnabled'] = self.new_object.get('audioRecordingEnabled')
         if self.new_object.get('restrictedBandwidthModeEnabled') is not None or self.new_object.get('restricted_bandwidth_mode_enabled') is not None:
-            new_object_params['restrictedBandwidthModeEnabled'] = self.new_object.get('restrictedBandwidthModeEnabled') or \
-                self.new_object.get('restricted_bandwidth_mode_enabled')
+            new_object_params['restrictedBandwidthModeEnabled'] = self.new_object.get('restrictedBandwidthModeEnabled')
         if self.new_object.get('quality') is not None or self.new_object.get('quality') is not None:
             new_object_params['quality'] = self.new_object.get('quality') or \
                 self.new_object.get('quality')

@@ -63,8 +63,7 @@ class DevicesSwitchWarmSpare(object):
     def update_all_params(self):
         new_object_params = {}
         if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
-            new_object_params['enabled'] = self.new_object.get('enabled') or \
-                self.new_object.get('enabled')
+            new_object_params['enabled'] = self.new_object.get('enabled')
         if self.new_object.get('spareSerial') is not None or self.new_object.get('spare_serial') is not None:
             new_object_params['spareSerial'] = self.new_object.get('spareSerial') or \
                 self.new_object.get('spare_serial')
