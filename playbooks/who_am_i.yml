@@ -1,12 +1,9 @@
 ---
 - hosts: meraki_servers
-  vars_files:
-    - credentials.yml
   gather_facts: false
   tasks:
     - name: Get my administered identities
       cisco.meraki.administered_identities_me_info:
-        meraki_api_key: "{{meraki_api_key}}"
       register: result
 
     - name: Show result
