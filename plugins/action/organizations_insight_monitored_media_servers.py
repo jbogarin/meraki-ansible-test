@@ -85,8 +85,7 @@ class OrganizationsInsightMonitoredMediaServers(object):
             new_object_params['address'] = self.new_object.get('address') or \
                 self.new_object.get('address')
         if self.new_object.get('bestEffortMonitoringEnabled') is not None or self.new_object.get('best_effort_monitoring_enabled') is not None:
-            new_object_params['bestEffortMonitoringEnabled'] = self.new_object.get('bestEffortMonitoringEnabled') or \
-                self.new_object.get('best_effort_monitoring_enabled')
+            new_object_params['bestEffortMonitoringEnabled'] = self.new_object.get('bestEffortMonitoringEnabled')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -111,8 +110,7 @@ class OrganizationsInsightMonitoredMediaServers(object):
             new_object_params['address'] = self.new_object.get('address') or \
                 self.new_object.get('address')
         if self.new_object.get('bestEffortMonitoringEnabled') is not None or self.new_object.get('best_effort_monitoring_enabled') is not None:
-            new_object_params['bestEffortMonitoringEnabled'] = self.new_object.get('bestEffortMonitoringEnabled') or \
-                self.new_object.get('best_effort_monitoring_enabled')
+            new_object_params['bestEffortMonitoringEnabled'] = self.new_object.get('bestEffortMonitoringEnabled')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -134,7 +132,7 @@ class OrganizationsInsightMonitoredMediaServers(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-            if result == None:
+            if result is None:
                 result = items
         except Exception as e:
             print("Error: ", e)

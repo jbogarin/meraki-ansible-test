@@ -74,8 +74,7 @@ class NetworksSensorMqttBrokers(object):
     def update_by_id_params(self):
         new_object_params = {}
         if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
-            new_object_params['enabled'] = self.new_object.get('enabled') or \
-                self.new_object.get('enabled')
+            new_object_params['enabled'] = self.new_object.get('enabled')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -97,7 +96,7 @@ class NetworksSensorMqttBrokers(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-            if result == None:
+            if result is None:
                 result = items
         except Exception as e:
             print("Error: ", e)

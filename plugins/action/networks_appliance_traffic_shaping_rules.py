@@ -64,8 +64,7 @@ class NetworksApplianceTrafficShapingRules(object):
     def update_all_params(self):
         new_object_params = {}
         if self.new_object.get('defaultRulesEnabled') is not None or self.new_object.get('default_rules_enabled') is not None:
-            new_object_params['defaultRulesEnabled'] = self.new_object.get('defaultRulesEnabled') or \
-                self.new_object.get('default_rules_enabled')
+            new_object_params['defaultRulesEnabled'] = self.new_object.get('defaultRulesEnabled')
         if self.new_object.get('rules') is not None or self.new_object.get('rules') is not None:
             new_object_params['rules'] = self.new_object.get('rules') or \
                 self.new_object.get('rules')
@@ -87,7 +86,7 @@ class NetworksApplianceTrafficShapingRules(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-            if result == None:
+            if result is None:
                 result = items
         except Exception as e:
             print("Error: ", e)

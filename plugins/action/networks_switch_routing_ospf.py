@@ -74,8 +74,7 @@ class NetworksSwitchRoutingOspf(object):
     def update_all_params(self):
         new_object_params = {}
         if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
-            new_object_params['enabled'] = self.new_object.get('enabled') or \
-                self.new_object.get('enabled')
+            new_object_params['enabled'] = self.new_object.get('enabled')
         if self.new_object.get('helloTimerInSeconds') is not None or self.new_object.get('hello_timer_in_seconds') is not None:
             new_object_params['helloTimerInSeconds'] = self.new_object.get('helloTimerInSeconds') or \
                 self.new_object.get('hello_timer_in_seconds')
@@ -89,8 +88,7 @@ class NetworksSwitchRoutingOspf(object):
             new_object_params['v3'] = self.new_object.get('v3') or \
                 self.new_object.get('v3')
         if self.new_object.get('md5AuthenticationEnabled') is not None or self.new_object.get('md5_authentication_enabled') is not None:
-            new_object_params['md5AuthenticationEnabled'] = self.new_object.get('md5AuthenticationEnabled') or \
-                self.new_object.get('md5_authentication_enabled')
+            new_object_params['md5AuthenticationEnabled'] = self.new_object.get('md5AuthenticationEnabled')
         if self.new_object.get('md5AuthenticationKey') is not None or self.new_object.get('md5_authentication_key') is not None:
             new_object_params['md5AuthenticationKey'] = self.new_object.get('md5AuthenticationKey') or \
                 self.new_object.get('md5_authentication_key')
@@ -112,7 +110,7 @@ class NetworksSwitchRoutingOspf(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-            if result == None:
+            if result is None:
                 result = items
         except Exception as e:
             print("Error: ", e)

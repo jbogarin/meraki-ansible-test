@@ -101,8 +101,7 @@ class DevicesSwitchRoutingInterfacesDhcp(object):
             new_object_params['dnsCustomNameservers'] = self.new_object.get('dnsCustomNameservers') or \
                 self.new_object.get('dns_custom_nameservers')
         if self.new_object.get('bootOptionsEnabled') is not None or self.new_object.get('boot_options_enabled') is not None:
-            new_object_params['bootOptionsEnabled'] = self.new_object.get('bootOptionsEnabled') or \
-                self.new_object.get('boot_options_enabled')
+            new_object_params['bootOptionsEnabled'] = self.new_object.get('bootOptionsEnabled')
         if self.new_object.get('bootNextServer') is not None or self.new_object.get('boot_next_server') is not None:
             new_object_params['bootNextServer'] = self.new_object.get('bootNextServer') or \
                 self.new_object.get('boot_next_server')
@@ -139,7 +138,7 @@ class DevicesSwitchRoutingInterfacesDhcp(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-            if result == None:
+            if result is None:
                 result = items
         except Exception as e:
             print("Error: ", e)

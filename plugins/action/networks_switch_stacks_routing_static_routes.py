@@ -100,11 +100,9 @@ class NetworksSwitchStacksRoutingStaticRoutes(object):
             new_object_params['nextHopIp'] = self.new_object.get('nextHopIp') or \
                 self.new_object.get('next_hop_ip')
         if self.new_object.get('advertiseViaOspfEnabled') is not None or self.new_object.get('advertise_via_ospf_enabled') is not None:
-            new_object_params['advertiseViaOspfEnabled'] = self.new_object.get('advertiseViaOspfEnabled') or \
-                self.new_object.get('advertise_via_ospf_enabled')
+            new_object_params['advertiseViaOspfEnabled'] = self.new_object.get('advertiseViaOspfEnabled')
         if self.new_object.get('preferOverOspfRoutesEnabled') is not None or self.new_object.get('prefer_over_ospf_routes_enabled') is not None:
-            new_object_params['preferOverOspfRoutesEnabled'] = self.new_object.get('preferOverOspfRoutesEnabled') or \
-                self.new_object.get('prefer_over_ospf_routes_enabled')
+            new_object_params['preferOverOspfRoutesEnabled'] = self.new_object.get('preferOverOspfRoutesEnabled')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -138,11 +136,9 @@ class NetworksSwitchStacksRoutingStaticRoutes(object):
             new_object_params['nextHopIp'] = self.new_object.get('nextHopIp') or \
                 self.new_object.get('next_hop_ip')
         if self.new_object.get('advertiseViaOspfEnabled') is not None or self.new_object.get('advertise_via_ospf_enabled') is not None:
-            new_object_params['advertiseViaOspfEnabled'] = self.new_object.get('advertiseViaOspfEnabled') or \
-                self.new_object.get('advertise_via_ospf_enabled')
+            new_object_params['advertiseViaOspfEnabled'] = self.new_object.get('advertiseViaOspfEnabled')
         if self.new_object.get('preferOverOspfRoutesEnabled') is not None or self.new_object.get('prefer_over_ospf_routes_enabled') is not None:
-            new_object_params['preferOverOspfRoutesEnabled'] = self.new_object.get('preferOverOspfRoutesEnabled') or \
-                self.new_object.get('prefer_over_ospf_routes_enabled')
+            new_object_params['preferOverOspfRoutesEnabled'] = self.new_object.get('preferOverOspfRoutesEnabled')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -167,7 +163,7 @@ class NetworksSwitchStacksRoutingStaticRoutes(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-            if result == None:
+            if result is None:
                 result = items
         except Exception as e:
             print("Error: ", e)

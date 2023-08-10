@@ -67,8 +67,7 @@ class DevicesCameraSense(object):
     def update_all_params(self):
         new_object_params = {}
         if self.new_object.get('senseEnabled') is not None or self.new_object.get('sense_enabled') is not None:
-            new_object_params['senseEnabled'] = self.new_object.get('senseEnabled') or \
-                self.new_object.get('sense_enabled')
+            new_object_params['senseEnabled'] = self.new_object.get('senseEnabled')
         if self.new_object.get('mqttBrokerId') is not None or self.new_object.get('mqtt_broker_id') is not None:
             new_object_params['mqttBrokerId'] = self.new_object.get('mqttBrokerId') or \
                 self.new_object.get('mqtt_broker_id')
@@ -96,7 +95,7 @@ class DevicesCameraSense(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-            if result == None:
+            if result is None:
                 result = items
         except Exception as e:
             print("Error: ", e)

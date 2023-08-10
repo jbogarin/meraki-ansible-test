@@ -87,8 +87,7 @@ class NetworksFirmwareUpgradesStagedGroups(object):
             new_object_params['description'] = self.new_object.get('description') or \
                 self.new_object.get('description')
         if self.new_object.get('isDefault') is not None or self.new_object.get('is_default') is not None:
-            new_object_params['isDefault'] = self.new_object.get('isDefault') or \
-                self.new_object.get('is_default')
+            new_object_params['isDefault'] = self.new_object.get('isDefault')
         if self.new_object.get('assignedDevices') is not None or self.new_object.get('assigned_devices') is not None:
             new_object_params['assignedDevices'] = self.new_object.get('assignedDevices') or \
                 self.new_object.get('assigned_devices')
@@ -116,8 +115,7 @@ class NetworksFirmwareUpgradesStagedGroups(object):
             new_object_params['description'] = self.new_object.get('description') or \
                 self.new_object.get('description')
         if self.new_object.get('isDefault') is not None or self.new_object.get('is_default') is not None:
-            new_object_params['isDefault'] = self.new_object.get('isDefault') or \
-                self.new_object.get('is_default')
+            new_object_params['isDefault'] = self.new_object.get('isDefault')
         if self.new_object.get('assignedDevices') is not None or self.new_object.get('assigned_devices') is not None:
             new_object_params['assignedDevices'] = self.new_object.get('assignedDevices') or \
                 self.new_object.get('assigned_devices')
@@ -142,7 +140,7 @@ class NetworksFirmwareUpgradesStagedGroups(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-            if result == None:
+            if result is None:
                 result = items
         except Exception as e:
             print("Error: ", e)

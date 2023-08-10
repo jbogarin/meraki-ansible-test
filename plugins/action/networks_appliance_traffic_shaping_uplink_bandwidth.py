@@ -82,7 +82,7 @@ class NetworksApplianceTrafficShapingUplinkBandwidth(object):
                 if 'bandwidthLimits' in items:
                     items = items.get('bandwidthLimits')
             result = get_dict_result(items, 'name', name)
-            if result == None:
+            if result is None:
                 result = items
         except Exception as e:
             print("Error: ", e)

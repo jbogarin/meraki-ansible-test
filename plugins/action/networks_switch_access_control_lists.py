@@ -82,7 +82,7 @@ class NetworksSwitchAccessControlLists(object):
                 if 'rules' in items:
                     items = items.get('rules')
             result = get_dict_result(items, 'name', name)
-            if result == None:
+            if result is None:
                 result = items
         except Exception as e:
             print("Error: ", e)

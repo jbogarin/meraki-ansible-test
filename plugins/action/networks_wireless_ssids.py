@@ -190,8 +190,7 @@ class NetworksWirelessSsids(object):
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
         if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
-            new_object_params['enabled'] = self.new_object.get('enabled') or \
-                self.new_object.get('enabled')
+            new_object_params['enabled'] = self.new_object.get('enabled')
         if self.new_object.get('authMode') is not None or self.new_object.get('auth_mode') is not None:
             new_object_params['authMode'] = self.new_object.get('authMode') or \
                 self.new_object.get('auth_mode')
@@ -235,11 +234,9 @@ class NetworksWirelessSsids(object):
             new_object_params['radiusServers'] = self.new_object.get('radiusServers') or \
                 self.new_object.get('radius_servers')
         if self.new_object.get('radiusProxyEnabled') is not None or self.new_object.get('radius_proxy_enabled') is not None:
-            new_object_params['radiusProxyEnabled'] = self.new_object.get('radiusProxyEnabled') or \
-                self.new_object.get('radius_proxy_enabled')
+            new_object_params['radiusProxyEnabled'] = self.new_object.get('radiusProxyEnabled')
         if self.new_object.get('radiusTestingEnabled') is not None or self.new_object.get('radius_testing_enabled') is not None:
-            new_object_params['radiusTestingEnabled'] = self.new_object.get('radiusTestingEnabled') or \
-                self.new_object.get('radius_testing_enabled')
+            new_object_params['radiusTestingEnabled'] = self.new_object.get('radiusTestingEnabled')
         if self.new_object.get('radiusCalledStationId') is not None or self.new_object.get('radius_called_station_id') is not None:
             new_object_params['radiusCalledStationId'] = self.new_object.get('radiusCalledStationId') or \
                 self.new_object.get('radius_called_station_id')
@@ -253,11 +250,9 @@ class NetworksWirelessSsids(object):
             new_object_params['radiusServerAttemptsLimit'] = self.new_object.get('radiusServerAttemptsLimit') or \
                 self.new_object.get('radius_server_attempts_limit')
         if self.new_object.get('radiusFallbackEnabled') is not None or self.new_object.get('radius_fallback_enabled') is not None:
-            new_object_params['radiusFallbackEnabled'] = self.new_object.get('radiusFallbackEnabled') or \
-                self.new_object.get('radius_fallback_enabled')
+            new_object_params['radiusFallbackEnabled'] = self.new_object.get('radiusFallbackEnabled')
         if self.new_object.get('radiusCoaEnabled') is not None or self.new_object.get('radius_coa_enabled') is not None:
-            new_object_params['radiusCoaEnabled'] = self.new_object.get('radiusCoaEnabled') or \
-                self.new_object.get('radius_coa_enabled')
+            new_object_params['radiusCoaEnabled'] = self.new_object.get('radiusCoaEnabled')
         if self.new_object.get('radiusFailoverPolicy') is not None or self.new_object.get('radius_failover_policy') is not None:
             new_object_params['radiusFailoverPolicy'] = self.new_object.get('radiusFailoverPolicy') or \
                 self.new_object.get('radius_failover_policy')
@@ -265,8 +260,7 @@ class NetworksWirelessSsids(object):
             new_object_params['radiusLoadBalancingPolicy'] = self.new_object.get('radiusLoadBalancingPolicy') or \
                 self.new_object.get('radius_load_balancing_policy')
         if self.new_object.get('radiusAccountingEnabled') is not None or self.new_object.get('radius_accounting_enabled') is not None:
-            new_object_params['radiusAccountingEnabled'] = self.new_object.get('radiusAccountingEnabled') or \
-                self.new_object.get('radius_accounting_enabled')
+            new_object_params['radiusAccountingEnabled'] = self.new_object.get('radiusAccountingEnabled')
         if self.new_object.get('radiusAccountingServers') is not None or self.new_object.get('radius_accounting_servers') is not None:
             new_object_params['radiusAccountingServers'] = self.new_object.get('radiusAccountingServers') or \
                 self.new_object.get('radius_accounting_servers')
@@ -280,8 +274,7 @@ class NetworksWirelessSsids(object):
             new_object_params['ipAssignmentMode'] = self.new_object.get('ipAssignmentMode') or \
                 self.new_object.get('ip_assignment_mode')
         if self.new_object.get('useVlanTagging') is not None or self.new_object.get('use_vlan_tagging') is not None:
-            new_object_params['useVlanTagging'] = self.new_object.get('useVlanTagging') or \
-                self.new_object.get('use_vlan_tagging')
+            new_object_params['useVlanTagging'] = self.new_object.get('useVlanTagging')
         if self.new_object.get('concentratorNetworkId') is not None or self.new_object.get('concentrator_network_id') is not None:
             new_object_params['concentratorNetworkId'] = self.new_object.get('concentratorNetworkId') or \
                 self.new_object.get('concentrator_network_id')
@@ -289,8 +282,7 @@ class NetworksWirelessSsids(object):
             new_object_params['secondaryConcentratorNetworkId'] = self.new_object.get('secondaryConcentratorNetworkId') or \
                 self.new_object.get('secondary_concentrator_network_id')
         if self.new_object.get('disassociateClientsOnVpnFailover') is not None or self.new_object.get('disassociate_clients_on_vpn_failover') is not None:
-            new_object_params['disassociateClientsOnVpnFailover'] = self.new_object.get('disassociateClientsOnVpnFailover') or \
-                self.new_object.get('disassociate_clients_on_vpn_failover')
+            new_object_params['disassociateClientsOnVpnFailover'] = self.new_object.get('disassociateClientsOnVpnFailover')
         if self.new_object.get('vlanId') is not None or self.new_object.get('vlan_id') is not None:
             new_object_params['vlanId'] = self.new_object.get('vlanId') or \
                 self.new_object.get('vlan_id')
@@ -301,8 +293,7 @@ class NetworksWirelessSsids(object):
             new_object_params['apTagsAndVlanIds'] = self.new_object.get('apTagsAndVlanIds') or \
                 self.new_object.get('ap_tags_and_vlan_ids')
         if self.new_object.get('walledGardenEnabled') is not None or self.new_object.get('walled_garden_enabled') is not None:
-            new_object_params['walledGardenEnabled'] = self.new_object.get('walledGardenEnabled') or \
-                self.new_object.get('walled_garden_enabled')
+            new_object_params['walledGardenEnabled'] = self.new_object.get('walledGardenEnabled')
         if self.new_object.get('walledGardenRanges') is not None or self.new_object.get('walled_garden_ranges') is not None:
             new_object_params['walledGardenRanges'] = self.new_object.get('walledGardenRanges') or \
                 self.new_object.get('walled_garden_ranges')
@@ -310,11 +301,9 @@ class NetworksWirelessSsids(object):
             new_object_params['gre'] = self.new_object.get('gre') or \
                 self.new_object.get('gre')
         if self.new_object.get('radiusOverride') is not None or self.new_object.get('radius_override') is not None:
-            new_object_params['radiusOverride'] = self.new_object.get('radiusOverride') or \
-                self.new_object.get('radius_override')
+            new_object_params['radiusOverride'] = self.new_object.get('radiusOverride')
         if self.new_object.get('radiusGuestVlanEnabled') is not None or self.new_object.get('radius_guest_vlan_enabled') is not None:
-            new_object_params['radiusGuestVlanEnabled'] = self.new_object.get('radiusGuestVlanEnabled') or \
-                self.new_object.get('radius_guest_vlan_enabled')
+            new_object_params['radiusGuestVlanEnabled'] = self.new_object.get('radiusGuestVlanEnabled')
         if self.new_object.get('radiusGuestVlanId') is not None or self.new_object.get('radius_guest_vlan_id') is not None:
             new_object_params['radiusGuestVlanId'] = self.new_object.get('radiusGuestVlanId') or \
                 self.new_object.get('radius_guest_vlan_id')
@@ -337,23 +326,18 @@ class NetworksWirelessSsids(object):
             new_object_params['perSsidBandwidthLimitDown'] = self.new_object.get('perSsidBandwidthLimitDown') or \
                 self.new_object.get('per_ssid_bandwidth_limit_down')
         if self.new_object.get('lanIsolationEnabled') is not None or self.new_object.get('lan_isolation_enabled') is not None:
-            new_object_params['lanIsolationEnabled'] = self.new_object.get('lanIsolationEnabled') or \
-                self.new_object.get('lan_isolation_enabled')
+            new_object_params['lanIsolationEnabled'] = self.new_object.get('lanIsolationEnabled')
         if self.new_object.get('visible') is not None or self.new_object.get('visible') is not None:
-            new_object_params['visible'] = self.new_object.get('visible') or \
-                self.new_object.get('visible')
+            new_object_params['visible'] = self.new_object.get('visible')
         if self.new_object.get('availableOnAllAps') is not None or self.new_object.get('available_on_all_aps') is not None:
-            new_object_params['availableOnAllAps'] = self.new_object.get('availableOnAllAps') or \
-                self.new_object.get('available_on_all_aps')
+            new_object_params['availableOnAllAps'] = self.new_object.get('availableOnAllAps')
         if self.new_object.get('availabilityTags') is not None or self.new_object.get('availability_tags') is not None:
             new_object_params['availabilityTags'] = self.new_object.get('availabilityTags') or \
                 self.new_object.get('availability_tags')
         if self.new_object.get('mandatoryDhcpEnabled') is not None or self.new_object.get('mandatory_dhcp_enabled') is not None:
-            new_object_params['mandatoryDhcpEnabled'] = self.new_object.get('mandatoryDhcpEnabled') or \
-                self.new_object.get('mandatory_dhcp_enabled')
+            new_object_params['mandatoryDhcpEnabled'] = self.new_object.get('mandatoryDhcpEnabled')
         if self.new_object.get('adultContentFilteringEnabled') is not None or self.new_object.get('adult_content_filtering_enabled') is not None:
-            new_object_params['adultContentFilteringEnabled'] = self.new_object.get('adultContentFilteringEnabled') or \
-                self.new_object.get('adult_content_filtering_enabled')
+            new_object_params['adultContentFilteringEnabled'] = self.new_object.get('adultContentFilteringEnabled')
         if self.new_object.get('dnsRewrite') is not None or self.new_object.get('dns_rewrite') is not None:
             new_object_params['dnsRewrite'] = self.new_object.get('dnsRewrite') or \
                 self.new_object.get('dns_rewrite')
@@ -381,7 +365,7 @@ class NetworksWirelessSsids(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-            if result == None:
+            if result is None:
                 result = items
         except Exception as e:
             print("Error: ", e)

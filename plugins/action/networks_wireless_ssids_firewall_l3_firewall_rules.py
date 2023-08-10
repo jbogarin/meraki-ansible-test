@@ -71,8 +71,7 @@ class NetworksWirelessSsidsFirewallL3FirewallRules(object):
             new_object_params['rules'] = self.new_object.get('rules') or \
                 self.new_object.get('rules')
         if self.new_object.get('allowLanAccess') is not None or self.new_object.get('allow_lan_access') is not None:
-            new_object_params['allowLanAccess'] = self.new_object.get('allowLanAccess') or \
-                self.new_object.get('allow_lan_access')
+            new_object_params['allowLanAccess'] = self.new_object.get('allowLanAccess')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -94,7 +93,7 @@ class NetworksWirelessSsidsFirewallL3FirewallRules(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-            if result == None:
+            if result is None:
                 result = items
         except Exception as e:
             print("Error: ", e)

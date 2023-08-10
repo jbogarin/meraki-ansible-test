@@ -149,8 +149,7 @@ class Devices(object):
             new_object_params['notes'] = self.new_object.get('notes') or \
                 self.new_object.get('notes')
         if self.new_object.get('moveMapMarker') is not None or self.new_object.get('move_map_marker') is not None:
-            new_object_params['moveMapMarker'] = self.new_object.get('moveMapMarker') or \
-                self.new_object.get('move_map_marker')
+            new_object_params['moveMapMarker'] = self.new_object.get('moveMapMarker')
         if self.new_object.get('switchProfileId') is not None or self.new_object.get('switch_profile_id') is not None:
             new_object_params['switchProfileId'] = self.new_object.get('switchProfileId') or \
                 self.new_object.get('switch_profile_id')
@@ -178,7 +177,7 @@ class Devices(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-            if result == None:
+            if result is None:
                 result = items
         except Exception as e:
             print("Error: ", e)

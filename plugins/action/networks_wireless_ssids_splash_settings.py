@@ -97,8 +97,7 @@ class NetworksWirelessSsidsSplashSettings(object):
             new_object_params['splashUrl'] = self.new_object.get('splashUrl') or \
                 self.new_object.get('splash_url')
         if self.new_object.get('useSplashUrl') is not None or self.new_object.get('use_splash_url') is not None:
-            new_object_params['useSplashUrl'] = self.new_object.get('useSplashUrl') or \
-                self.new_object.get('use_splash_url')
+            new_object_params['useSplashUrl'] = self.new_object.get('useSplashUrl')
         if self.new_object.get('splashTimeout') is not None or self.new_object.get('splash_timeout') is not None:
             new_object_params['splashTimeout'] = self.new_object.get('splashTimeout') or \
                 self.new_object.get('splash_timeout')
@@ -106,8 +105,7 @@ class NetworksWirelessSsidsSplashSettings(object):
             new_object_params['redirectUrl'] = self.new_object.get('redirectUrl') or \
                 self.new_object.get('redirect_url')
         if self.new_object.get('useRedirectUrl') is not None or self.new_object.get('use_redirect_url') is not None:
-            new_object_params['useRedirectUrl'] = self.new_object.get('useRedirectUrl') or \
-                self.new_object.get('use_redirect_url')
+            new_object_params['useRedirectUrl'] = self.new_object.get('useRedirectUrl')
         if self.new_object.get('welcomeMessage') is not None or self.new_object.get('welcome_message') is not None:
             new_object_params['welcomeMessage'] = self.new_object.get('welcomeMessage') or \
                 self.new_object.get('welcome_message')
@@ -121,14 +119,12 @@ class NetworksWirelessSsidsSplashSettings(object):
             new_object_params['splashPrepaidFront'] = self.new_object.get('splashPrepaidFront') or \
                 self.new_object.get('splash_prepaid_front')
         if self.new_object.get('blockAllTrafficBeforeSignOn') is not None or self.new_object.get('block_all_traffic_before_sign_on') is not None:
-            new_object_params['blockAllTrafficBeforeSignOn'] = self.new_object.get('blockAllTrafficBeforeSignOn') or \
-                self.new_object.get('block_all_traffic_before_sign_on')
+            new_object_params['blockAllTrafficBeforeSignOn'] = self.new_object.get('blockAllTrafficBeforeSignOn')
         if self.new_object.get('controllerDisconnectionBehavior') is not None or self.new_object.get('controller_disconnection_behavior') is not None:
             new_object_params['controllerDisconnectionBehavior'] = self.new_object.get('controllerDisconnectionBehavior') or \
                 self.new_object.get('controller_disconnection_behavior')
         if self.new_object.get('allowSimultaneousLogins') is not None or self.new_object.get('allow_simultaneous_logins') is not None:
-            new_object_params['allowSimultaneousLogins'] = self.new_object.get('allowSimultaneousLogins') or \
-                self.new_object.get('allow_simultaneous_logins')
+            new_object_params['allowSimultaneousLogins'] = self.new_object.get('allowSimultaneousLogins')
         if self.new_object.get('guestSponsorship') is not None or self.new_object.get('guest_sponsorship') is not None:
             new_object_params['guestSponsorship'] = self.new_object.get('guestSponsorship') or \
                 self.new_object.get('guest_sponsorship')
@@ -159,7 +155,7 @@ class NetworksWirelessSsidsSplashSettings(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-            if result == None:
+            if result is None:
                 result = items
         except Exception as e:
             print("Error: ", e)

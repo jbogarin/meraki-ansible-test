@@ -67,8 +67,7 @@ class NetworksApplianceFirewallInboundFirewallRules(object):
             new_object_params['rules'] = self.new_object.get('rules') or \
                 self.new_object.get('rules')
         if self.new_object.get('syslogDefaultRule') is not None or self.new_object.get('syslog_default_rule') is not None:
-            new_object_params['syslogDefaultRule'] = self.new_object.get('syslogDefaultRule') or \
-                self.new_object.get('syslog_default_rule')
+            new_object_params['syslogDefaultRule'] = self.new_object.get('syslogDefaultRule')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -87,7 +86,7 @@ class NetworksApplianceFirewallInboundFirewallRules(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-            if result == None:
+            if result is None:
                 result = items
         except Exception as e:
             print("Error: ", e)

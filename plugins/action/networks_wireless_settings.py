@@ -70,20 +70,16 @@ class NetworksWirelessSettings(object):
     def update_all_params(self):
         new_object_params = {}
         if self.new_object.get('meshingEnabled') is not None or self.new_object.get('meshing_enabled') is not None:
-            new_object_params['meshingEnabled'] = self.new_object.get('meshingEnabled') or \
-                self.new_object.get('meshing_enabled')
+            new_object_params['meshingEnabled'] = self.new_object.get('meshingEnabled')
         if self.new_object.get('ipv6BridgeEnabled') is not None or self.new_object.get('ipv6_bridge_enabled') is not None:
-            new_object_params['ipv6BridgeEnabled'] = self.new_object.get('ipv6BridgeEnabled') or \
-                self.new_object.get('ipv6_bridge_enabled')
+            new_object_params['ipv6BridgeEnabled'] = self.new_object.get('ipv6BridgeEnabled')
         if self.new_object.get('locationAnalyticsEnabled') is not None or self.new_object.get('location_analytics_enabled') is not None:
-            new_object_params['locationAnalyticsEnabled'] = self.new_object.get('locationAnalyticsEnabled') or \
-                self.new_object.get('location_analytics_enabled')
+            new_object_params['locationAnalyticsEnabled'] = self.new_object.get('locationAnalyticsEnabled')
         if self.new_object.get('upgradeStrategy') is not None or self.new_object.get('upgrade_strategy') is not None:
             new_object_params['upgradeStrategy'] = self.new_object.get('upgradeStrategy') or \
                 self.new_object.get('upgrade_strategy')
         if self.new_object.get('ledLightsOn') is not None or self.new_object.get('led_lights_on') is not None:
-            new_object_params['ledLightsOn'] = self.new_object.get('ledLightsOn') or \
-                self.new_object.get('led_lights_on')
+            new_object_params['ledLightsOn'] = self.new_object.get('ledLightsOn')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -102,7 +98,7 @@ class NetworksWirelessSettings(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-            if result == None:
+            if result is None:
                 result = items
         except Exception as e:
             print("Error: ", e)

@@ -72,14 +72,12 @@ class NetworksApplianceTrafficShapingUplinkSelection(object):
     def update_all_params(self):
         new_object_params = {}
         if self.new_object.get('activeActiveAutoVpnEnabled') is not None or self.new_object.get('active_active_auto_vpn_enabled') is not None:
-            new_object_params['activeActiveAutoVpnEnabled'] = self.new_object.get('activeActiveAutoVpnEnabled') or \
-                self.new_object.get('active_active_auto_vpn_enabled')
+            new_object_params['activeActiveAutoVpnEnabled'] = self.new_object.get('activeActiveAutoVpnEnabled')
         if self.new_object.get('defaultUplink') is not None or self.new_object.get('default_uplink') is not None:
             new_object_params['defaultUplink'] = self.new_object.get('defaultUplink') or \
                 self.new_object.get('default_uplink')
         if self.new_object.get('loadBalancingEnabled') is not None or self.new_object.get('load_balancing_enabled') is not None:
-            new_object_params['loadBalancingEnabled'] = self.new_object.get('loadBalancingEnabled') or \
-                self.new_object.get('load_balancing_enabled')
+            new_object_params['loadBalancingEnabled'] = self.new_object.get('loadBalancingEnabled')
         if self.new_object.get('failoverAndFailback') is not None or self.new_object.get('failover_and_failback') is not None:
             new_object_params['failoverAndFailback'] = self.new_object.get('failoverAndFailback') or \
                 self.new_object.get('failover_and_failback')
@@ -107,7 +105,7 @@ class NetworksApplianceTrafficShapingUplinkSelection(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-            if result == None:
+            if result is None:
                 result = items
         except Exception as e:
             print("Error: ", e)

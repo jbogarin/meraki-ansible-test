@@ -82,7 +82,7 @@ class OrganizationsApplianceVpnThirdPartyVpnpeers(object):
                 if 'peers' in items:
                     items = items.get('peers')
             result = get_dict_result(items, 'name', name)
-            if result == None:
+            if result is None:
                 result = items
         except Exception as e:
             print("Error: ", e)

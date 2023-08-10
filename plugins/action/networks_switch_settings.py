@@ -69,8 +69,7 @@ class NetworksSwitchSettings(object):
             new_object_params['vlan'] = self.new_object.get('vlan') or \
                 self.new_object.get('vlan')
         if self.new_object.get('useCombinedPower') is not None or self.new_object.get('use_combined_power') is not None:
-            new_object_params['useCombinedPower'] = self.new_object.get('useCombinedPower') or \
-                self.new_object.get('use_combined_power')
+            new_object_params['useCombinedPower'] = self.new_object.get('useCombinedPower')
         if self.new_object.get('powerExceptions') is not None or self.new_object.get('power_exceptions') is not None:
             new_object_params['powerExceptions'] = self.new_object.get('powerExceptions') or \
                 self.new_object.get('power_exceptions')
@@ -92,7 +91,7 @@ class NetworksSwitchSettings(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-            if result == None:
+            if result is None:
                 result = items
         except Exception as e:
             print("Error: ", e)

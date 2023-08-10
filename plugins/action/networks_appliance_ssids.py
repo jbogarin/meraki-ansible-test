@@ -94,8 +94,7 @@ class NetworksApplianceSsids(object):
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
         if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
-            new_object_params['enabled'] = self.new_object.get('enabled') or \
-                self.new_object.get('enabled')
+            new_object_params['enabled'] = self.new_object.get('enabled')
         if self.new_object.get('defaultVlanId') is not None or self.new_object.get('default_vlan_id') is not None:
             new_object_params['defaultVlanId'] = self.new_object.get('defaultVlanId') or \
                 self.new_object.get('default_vlan_id')
@@ -115,8 +114,7 @@ class NetworksApplianceSsids(object):
             new_object_params['wpaEncryptionMode'] = self.new_object.get('wpaEncryptionMode') or \
                 self.new_object.get('wpa_encryption_mode')
         if self.new_object.get('visible') is not None or self.new_object.get('visible') is not None:
-            new_object_params['visible'] = self.new_object.get('visible') or \
-                self.new_object.get('visible')
+            new_object_params['visible'] = self.new_object.get('visible')
         if self.new_object.get('dhcpEnforcedDeauthentication') is not None or self.new_object.get('dhcp_enforced_deauthentication') is not None:
             new_object_params['dhcpEnforcedDeauthentication'] = self.new_object.get('dhcpEnforcedDeauthentication') or \
                 self.new_object.get('dhcp_enforced_deauthentication')
@@ -141,7 +139,7 @@ class NetworksApplianceSsids(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-            if result == None:
+            if result is None:
                 result = items
         except Exception as e:
             print("Error: ", e)

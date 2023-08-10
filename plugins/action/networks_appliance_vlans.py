@@ -186,8 +186,7 @@ class NetworksApplianceVlans(object):
             new_object_params['dhcpLeaseTime'] = self.new_object.get('dhcpLeaseTime') or \
                 self.new_object.get('dhcp_lease_time')
         if self.new_object.get('dhcpBootOptionsEnabled') is not None or self.new_object.get('dhcp_boot_options_enabled') is not None:
-            new_object_params['dhcpBootOptionsEnabled'] = self.new_object.get('dhcpBootOptionsEnabled') or \
-                self.new_object.get('dhcp_boot_options_enabled')
+            new_object_params['dhcpBootOptionsEnabled'] = self.new_object.get('dhcpBootOptionsEnabled')
         if self.new_object.get('dhcpBootNextServer') is not None or self.new_object.get('dhcp_boot_next_server') is not None:
             new_object_params['dhcpBootNextServer'] = self.new_object.get('dhcpBootNextServer') or \
                 self.new_object.get('dhcp_boot_next_server')
@@ -242,7 +241,7 @@ class NetworksApplianceVlans(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-            if result == None:
+            if result is None:
                 result = items
         except Exception as e:
             print("Error: ", e)

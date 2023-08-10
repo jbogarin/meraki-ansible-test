@@ -74,11 +74,9 @@ class OrganizationsSnmp(object):
     def update_all_params(self):
         new_object_params = {}
         if self.new_object.get('v2cEnabled') is not None or self.new_object.get('v2c_enabled') is not None:
-            new_object_params['v2cEnabled'] = self.new_object.get('v2cEnabled') or \
-                self.new_object.get('v2c_enabled')
+            new_object_params['v2cEnabled'] = self.new_object.get('v2cEnabled')
         if self.new_object.get('v3Enabled') is not None or self.new_object.get('v3_enabled') is not None:
-            new_object_params['v3Enabled'] = self.new_object.get('v3Enabled') or \
-                self.new_object.get('v3_enabled')
+            new_object_params['v3Enabled'] = self.new_object.get('v3Enabled')
         if self.new_object.get('v3AuthMode') is not None or self.new_object.get('v3_auth_mode') is not None:
             new_object_params['v3AuthMode'] = self.new_object.get('v3AuthMode') or \
                 self.new_object.get('v3_auth_mode')
@@ -112,7 +110,7 @@ class OrganizationsSnmp(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-            if result == None:
+            if result is None:
                 result = items
         except Exception as e:
             print("Error: ", e)

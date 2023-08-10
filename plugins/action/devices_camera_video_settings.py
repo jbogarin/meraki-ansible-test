@@ -61,8 +61,7 @@ class DevicesCameraVideoSettings(object):
     def update_all_params(self):
         new_object_params = {}
         if self.new_object.get('externalRtspEnabled') is not None or self.new_object.get('external_rtsp_enabled') is not None:
-            new_object_params['externalRtspEnabled'] = self.new_object.get('externalRtspEnabled') or \
-                self.new_object.get('external_rtsp_enabled')
+            new_object_params['externalRtspEnabled'] = self.new_object.get('externalRtspEnabled')
         if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial') or \
                 self.new_object.get('serial')
@@ -81,7 +80,7 @@ class DevicesCameraVideoSettings(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
-            if result == None:
+            if result is None:
                 result = items
         except Exception as e:
             print("Error: ", e)
