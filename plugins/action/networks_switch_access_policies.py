@@ -81,8 +81,10 @@ class NetworksSwitchAccessPolicies(object):
             guestVlanId=params.get("guestVlanId"),
             dot1x=params.get("dot1x"),
             voiceVlanClients=params.get("voiceVlanClients"),
-            urlRedirectWalledGardenEnabled=params.get("urlRedirectWalledGardenEnabled"),
-            urlRedirectWalledGardenRanges=params.get("urlRedirectWalledGardenRanges"),
+            urlRedirectWalledGardenEnabled=params.get(
+                "urlRedirectWalledGardenEnabled"),
+            urlRedirectWalledGardenRanges=params.get(
+                "urlRedirectWalledGardenRanges"),
             networkId=params.get("networkId"),
             accessPolicyNumber=params.get("accessPolicyNumber"),
         )
@@ -106,7 +108,6 @@ class NetworksSwitchAccessPolicies(object):
 
     def create_params(self):
         new_object_params = {}
-        #REVIEW {'name': {'type': 'str', 'description': 'Name of the access policy.'}, 'radiusServers': {'type': 'list', 'description': 'List of RADIUS servers to require connecting devices to authenticate against before granting network access.', 'elements': 'dict', 'suboptions': {'host': {'type': 'str', 'description': 'Public IP address of the RADIUS server.'}, 'port': {'type': 'int', 'description': 'UDP port that the RADIUS server listens on for access requests.'}, 'secret': {'type': 'str', 'description': 'RADIUS client shared secret.'}}}, 'radius': {'type': 'dict', 'suboptions': {'criticalAuth': {'type': 'dict', 'suboptions': {'dataVlanId': {'type': 'int', 'description': 'VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth.'}, 'voiceVlanId': {'type': 'int', 'description': 'VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth.'}, 'suspendPortBounce': {'type': 'bool', 'description': 'Enable to suspend port bounce when RADIUS servers are unreachable.'}}, 'description': 'Critical auth settings for when authentication is rejected by the RADIUS server.'}, 'failedAuthVlanId': {'type': 'int', 'description': 'VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth.'}, 'reAuthenticationInterval': {'type': 'int', 'description': 'Re-authentication period in seconds. Will be null if hostMode is Multi-Auth.'}}, 'description': 'Object for RADIUS Settings.'}, 'guestPortBouncing': {'type': 'bool', 'description': 'If enabled, Meraki devices will periodically send access-request messages to these RADIUS servers.'}, 'radiusTestingEnabled': {'type': 'bool', 'description': 'If enabled, Meraki devices will periodically send access-request messages to these RADIUS servers.'}, 'radiusCoaSupportEnabled': {'type': 'bool', 'description': 'Change of authentication for RADIUS re-authentication and disconnection.'}, 'radiusAccountingEnabled': {'type': 'bool', 'description': 'Enable to send start, interim-update and stop messages to a configured RADIUS accounting server for tracking connected clients.'}, 'radiusAccountingServers': {'type': 'list', 'description': 'List of RADIUS accounting servers to require connecting devices to authenticate against before granting network access.', 'elements': 'dict', 'suboptions': {'host': {'type': 'str', 'description': 'Public IP address of the RADIUS accounting server.'}, 'port': {'type': 'int', 'description': 'UDP port that the RADIUS Accounting server listens on for access requests.'}, 'secret': {'type': 'str', 'description': 'RADIUS client shared secret.'}}}, 'radiusGroupAttribute': {'type': 'str', 'description': 'Acceptable values are `""` for None, or `"11"` for Group Policies ACL.'}, 'hostMode': {'type': 'str', 'description': 'Choose the Host Mode for the access policy.'}, 'accessPolicyType': {'type': 'str', 'description': "Access Type of the policy. Automatically 'Hybrid authentication' when hostMode is 'Multi-Domain'."}, 'increaseAccessSpeed': {'type': 'bool', 'description': "Enabling this option will make switches execute 802.1X and MAC-bypass authentication simultaneously so that clients authenticate faster. Only required when accessPolicyType is 'Hybrid Authentication."}, 'guestVlanId': {'type': 'int', 'description': 'ID for the guest VLAN allow unauthorized devices access to limited network resources.'}, 'dot1x': {'type': 'dict', 'suboptions': {'controlDirection': {'type': 'str', 'description': "Supports either 'both' or 'inbound'. Set to 'inbound' to allow unauthorized egress on the switchport. Set to 'both' to control both traffic directions with authorization. Defaults to 'both'."}}, 'description': '802.1x Settings.'}, 'voiceVlanClients': {'type': 'bool', 'description': "CDP/LLDP capable voice clients will be able to use this VLAN. Automatically true when hostMode is 'Multi-Domain'."}, 'urlRedirectWalledGardenEnabled': {'type': 'bool', 'description': 'Enable to restrict access for clients to a specific set of IP addresses or hostnames prior to authentication.'}, 'urlRedirectWalledGardenRanges': {'type': 'list', 'description': 'IP address ranges, in CIDR notation, to restrict access for clients to a specific set of IP addresses or hostnames prior to authentication.', 'elements': 'str'}, 'networkId': {'type': 'str', 'description': 'NetworkId path parameter. Network ID.'}}
         if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
@@ -117,13 +118,17 @@ class NetworksSwitchAccessPolicies(object):
             new_object_params['radius'] = self.new_object.get('radius') or \
                 self.new_object.get('radius')
         if self.new_object.get('guestPortBouncing') is not None or self.new_object.get('guest_port_bouncing') is not None:
-            new_object_params['guestPortBouncing'] = self.new_object.get('guestPortBouncing')
+            new_object_params['guestPortBouncing'] = self.new_object.get(
+                'guestPortBouncing')
         if self.new_object.get('radiusTestingEnabled') is not None or self.new_object.get('radius_testing_enabled') is not None:
-            new_object_params['radiusTestingEnabled'] = self.new_object.get('radiusTestingEnabled')
+            new_object_params['radiusTestingEnabled'] = self.new_object.get(
+                'radiusTestingEnabled')
         if self.new_object.get('radiusCoaSupportEnabled') is not None or self.new_object.get('radius_coa_support_enabled') is not None:
-            new_object_params['radiusCoaSupportEnabled'] = self.new_object.get('radiusCoaSupportEnabled')
+            new_object_params['radiusCoaSupportEnabled'] = self.new_object.get(
+                'radiusCoaSupportEnabled')
         if self.new_object.get('radiusAccountingEnabled') is not None or self.new_object.get('radius_accounting_enabled') is not None:
-            new_object_params['radiusAccountingEnabled'] = self.new_object.get('radiusAccountingEnabled')
+            new_object_params['radiusAccountingEnabled'] = self.new_object.get(
+                'radiusAccountingEnabled')
         if self.new_object.get('radiusAccountingServers') is not None or self.new_object.get('radius_accounting_servers') is not None:
             new_object_params['radiusAccountingServers'] = self.new_object.get('radiusAccountingServers') or \
                 self.new_object.get('radius_accounting_servers')
@@ -137,7 +142,8 @@ class NetworksSwitchAccessPolicies(object):
             new_object_params['accessPolicyType'] = self.new_object.get('accessPolicyType') or \
                 self.new_object.get('access_policy_type')
         if self.new_object.get('increaseAccessSpeed') is not None or self.new_object.get('increase_access_speed') is not None:
-            new_object_params['increaseAccessSpeed'] = self.new_object.get('increaseAccessSpeed')
+            new_object_params['increaseAccessSpeed'] = self.new_object.get(
+                'increaseAccessSpeed')
         if self.new_object.get('guestVlanId') is not None or self.new_object.get('guest_vlan_id') is not None:
             new_object_params['guestVlanId'] = self.new_object.get('guestVlanId') or \
                 self.new_object.get('guest_vlan_id')
@@ -145,9 +151,11 @@ class NetworksSwitchAccessPolicies(object):
             new_object_params['dot1x'] = self.new_object.get('dot1x') or \
                 self.new_object.get('dot1x')
         if self.new_object.get('voiceVlanClients') is not None or self.new_object.get('voice_vlan_clients') is not None:
-            new_object_params['voiceVlanClients'] = self.new_object.get('voiceVlanClients')
+            new_object_params['voiceVlanClients'] = self.new_object.get(
+                'voiceVlanClients')
         if self.new_object.get('urlRedirectWalledGardenEnabled') is not None or self.new_object.get('url_redirect_walled_garden_enabled') is not None:
-            new_object_params['urlRedirectWalledGardenEnabled'] = self.new_object.get('urlRedirectWalledGardenEnabled')
+            new_object_params['urlRedirectWalledGardenEnabled'] = self.new_object.get(
+                'urlRedirectWalledGardenEnabled')
         if self.new_object.get('urlRedirectWalledGardenRanges') is not None or self.new_object.get('url_redirect_walled_garden_ranges') is not None:
             new_object_params['urlRedirectWalledGardenRanges'] = self.new_object.get('urlRedirectWalledGardenRanges') or \
                 self.new_object.get('url_redirect_walled_garden_ranges')
@@ -178,13 +186,17 @@ class NetworksSwitchAccessPolicies(object):
             new_object_params['radius'] = self.new_object.get('radius') or \
                 self.new_object.get('radius')
         if self.new_object.get('guestPortBouncing') is not None or self.new_object.get('guest_port_bouncing') is not None:
-            new_object_params['guestPortBouncing'] = self.new_object.get('guestPortBouncing')
+            new_object_params['guestPortBouncing'] = self.new_object.get(
+                'guestPortBouncing')
         if self.new_object.get('radiusTestingEnabled') is not None or self.new_object.get('radius_testing_enabled') is not None:
-            new_object_params['radiusTestingEnabled'] = self.new_object.get('radiusTestingEnabled')
+            new_object_params['radiusTestingEnabled'] = self.new_object.get(
+                'radiusTestingEnabled')
         if self.new_object.get('radiusCoaSupportEnabled') is not None or self.new_object.get('radius_coa_support_enabled') is not None:
-            new_object_params['radiusCoaSupportEnabled'] = self.new_object.get('radiusCoaSupportEnabled')
+            new_object_params['radiusCoaSupportEnabled'] = self.new_object.get(
+                'radiusCoaSupportEnabled')
         if self.new_object.get('radiusAccountingEnabled') is not None or self.new_object.get('radius_accounting_enabled') is not None:
-            new_object_params['radiusAccountingEnabled'] = self.new_object.get('radiusAccountingEnabled')
+            new_object_params['radiusAccountingEnabled'] = self.new_object.get(
+                'radiusAccountingEnabled')
         if self.new_object.get('radiusAccountingServers') is not None or self.new_object.get('radius_accounting_servers') is not None:
             new_object_params['radiusAccountingServers'] = self.new_object.get('radiusAccountingServers') or \
                 self.new_object.get('radius_accounting_servers')
@@ -198,7 +210,8 @@ class NetworksSwitchAccessPolicies(object):
             new_object_params['accessPolicyType'] = self.new_object.get('accessPolicyType') or \
                 self.new_object.get('access_policy_type')
         if self.new_object.get('increaseAccessSpeed') is not None or self.new_object.get('increase_access_speed') is not None:
-            new_object_params['increaseAccessSpeed'] = self.new_object.get('increaseAccessSpeed')
+            new_object_params['increaseAccessSpeed'] = self.new_object.get(
+                'increaseAccessSpeed')
         if self.new_object.get('guestVlanId') is not None or self.new_object.get('guest_vlan_id') is not None:
             new_object_params['guestVlanId'] = self.new_object.get('guestVlanId') or \
                 self.new_object.get('guest_vlan_id')
@@ -206,9 +219,11 @@ class NetworksSwitchAccessPolicies(object):
             new_object_params['dot1x'] = self.new_object.get('dot1x') or \
                 self.new_object.get('dot1x')
         if self.new_object.get('voiceVlanClients') is not None or self.new_object.get('voice_vlan_clients') is not None:
-            new_object_params['voiceVlanClients'] = self.new_object.get('voiceVlanClients')
+            new_object_params['voiceVlanClients'] = self.new_object.get(
+                'voiceVlanClients')
         if self.new_object.get('urlRedirectWalledGardenEnabled') is not None or self.new_object.get('url_redirect_walled_garden_enabled') is not None:
-            new_object_params['urlRedirectWalledGardenEnabled'] = self.new_object.get('urlRedirectWalledGardenEnabled')
+            new_object_params['urlRedirectWalledGardenEnabled'] = self.new_object.get(
+                'urlRedirectWalledGardenEnabled')
         if self.new_object.get('urlRedirectWalledGardenRanges') is not None or self.new_object.get('url_redirect_walled_garden_ranges') is not None:
             new_object_params['urlRedirectWalledGardenRanges'] = self.new_object.get('urlRedirectWalledGardenRanges') or \
                 self.new_object.get('url_redirect_walled_garden_ranges')
