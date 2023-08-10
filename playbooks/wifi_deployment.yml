@@ -9,7 +9,7 @@
     - credentials.yml
   vars:
     org_id: "828099381482762270"
-    corp_name: "ABC Corp"
+    corp_name: "Umbrella Corp"
   gather_facts: false
   tasks:
 
