@@ -33,6 +33,7 @@ import os.path
 
 lowercase_change_words = ["deny", "any"]
 
+
 def is_list_complex(x):
     return isinstance(x[0], dict) or isinstance(x[0], list)
 
@@ -59,7 +60,7 @@ def has_diff_elem2(ls1, ls2):
                             has_diff = True
                     else:
                         if elem2[k] != elem[k]:
-                                has_diff = True
+                            has_diff = True
                 if not has_diff:
                     find = True
                     break
@@ -70,18 +71,19 @@ def has_diff_elem2(ls1, ls2):
 
 def have_to_change_to_lowercase(attr):
     # print("hola")
-    return attr  in lowercase_change_words
+    return attr in lowercase_change_words
+
 
 def delete_default_rule(ls):
-     index=0
-     for elem in ls:
-         if elem["comment"].lower() == "default rule":
+    index = 0
+    for elem in ls:
+        if elem["comment"].lower() == "default rule":
             del ls[index]
             break
-         index= index + 1
-     print(ls)
-     return ls        
-             
+        index = index + 1
+    print(ls)
+    return ls
+
 
 def compare_list(list1, list2):
     len_list1 = len(list1)
