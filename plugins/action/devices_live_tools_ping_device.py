@@ -98,7 +98,7 @@ class DevicesLiveToolsPingDevice(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("id") #review it
+        o_id = self.new_object.get("id")  # review it
         name = self.new_object.get("serial")
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
