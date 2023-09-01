@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  gather_facts: false
+  tasks:
+
+
+    - name: Query information about all administrators associated to the organization
+      meraki_admin:
+        auth_key: sdsdfsflsflsdkfj
+        org_name: Cloverhound
+        state: query
+      delegate_to: localhost
+      register: result
+
+    - name: Show result
+      ansible.builtin.debug:
+        msg: "{{ result }}"
